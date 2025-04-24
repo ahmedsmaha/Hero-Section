@@ -1,0 +1,30 @@
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8 p-6 min-h-screen items-center bg-gradient-to-br from-sky-50 to-white animate-fade-in-translate">
+  <div>
+    <h1
+      contenteditable="true"
+      (blur)="updateText('headline', $event)"
+      class="text-4xl md:text-6xl font-bold text-gray-900 mb-4 focus:outline-none"
+    >
+      {{ content.headline }}
+    </h1>
+    <p
+      contenteditable="true"
+      (blur)="updateText('subheadline', $event)"
+      class="text-lg text-gray-600 mb-6 focus:outline-none"
+    >
+      {{ content.subheadline }}
+    </p>
+    <div class="flex gap-4">
+      <button class="bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded-2xl shadow">Get Started</button>
+      <button class="border border-gray-300 hover:border-gray-500 px-4 py-2 rounded-2xl" (click)="regenerate()">Regenerate with AI</button>
+    </div>
+  </div>
+  <div class="transition-opacity duration-500">
+    <img
+      [src]="content.image"
+      alt="Hero Illustration"
+      class="w-full h-auto max-h-[500px] rounded-2xl shadow-xl object-cover"
+    />
+  </div>
+</section>
+
